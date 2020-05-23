@@ -20,7 +20,8 @@ end
     Child.create(
         name: Faker::Name.name,
         age: rand(1..4),
-        allergy: Faker::Boolean
+        allergy: Faker::Boolean,
+        enrolled: daycares.sample
     )
 end
 

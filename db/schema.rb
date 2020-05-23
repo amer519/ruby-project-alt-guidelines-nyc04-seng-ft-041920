@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_211422) do
+ActiveRecord::Schema.define(version: 2020_05_23_214619) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
     t.integer "age"
     t.boolean "allergy"
+    t.string "enrolled"
   end
 
   create_table "daycares", force: :cascade do |t|
