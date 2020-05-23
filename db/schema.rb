@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_23_181334) do
+ActiveRecord::Schema.define(version: 2020_05_23_211422) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 2020_05_23_181334) do
   create_table "daycares", force: :cascade do |t|
     t.string "name"
     t.string "address"
-    t.datetime "open"
-    t.datetime "closed"
+    t.string "open"
+    t.string "closed"
   end
 
   create_table "enrollments", force: :cascade do |t|
