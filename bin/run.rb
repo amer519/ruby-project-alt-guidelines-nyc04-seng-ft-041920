@@ -1,3 +1,10 @@
 require_relative '../config/environment'
 
-puts "hello world"
+
+
+interface = Interface.new()
+interface.welcome 
+interface.enrolling_or_not
+
+
+
