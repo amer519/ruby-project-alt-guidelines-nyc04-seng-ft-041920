@@ -1,7 +1,7 @@
 Child.destroy_all
 Daycare.destroy_all
 
-daycares = ["Dunder Daycare", "Sabre Daycare", "Scott's Totts", "Dwight'S Daycare"]
+daycares = ["Dunder Daycare", "Dwight's Daycare", "Scott's Totts"]
 
 
 daycares.each do |daycare|

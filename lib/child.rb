@@ -7,7 +7,7 @@ class Child < ActiveRecord::Base
     def self.create_new_child
         prompt = TTY::Prompt.new
         child_name = prompt.ask("Great! Whats your child's name?")
-        Child.create(name: child_name)
+        Child.last.update(name: child_name)
 
         child_age = prompt.ask("How old is #{child_name} ?", convert: :int)
         Child.last.update(age: child_age)
@@ -25,8 +25,12 @@ class Child < ActiveRecord::Base
             return found_child
         else
             puts "Sorry, your child is not currently enrolled!"
+            prompt.ask("Would you like to enroll?")
+
 
         end
     end
+
+
 
 end
