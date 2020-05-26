@@ -24,4 +24,11 @@ class Interface
         end
     end
 
+    
+
+    # def welcome_user
+    #     puts "We're excited for #{child.name} to be part of our community"
+    #     #prompt.ask("How old is #{child.name} ?", convert: :integer)
+    # end
+
 end
