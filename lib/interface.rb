@@ -17,6 +17,8 @@ class Interface
             menu.choice "Yes, I'd Love To!!", -> { Child.create_new_child } 
 
             menu.choice "No, My child's Enrolled", -> { Child.who_is_child }
+
+            menu.choice "Take my child out of Daycare", -> { Child.delete_child}
         end
         @user = something
     end
@@ -34,12 +36,15 @@ class Interface
 
 
     def update_child
-        prompt.select("Would you like to update your childs info?") do |menu|
+        prompt.select("Great!! Your child is now enrolled! Would you like to update your childs info?") do |menu|
             menu.choice "Yes Please", -> { Child.update_info }
             
             menu.choice "No, Thank you", -> { puts "OK, your all set than" }
         end
     end
+
+     
+    
     
     
     

@@ -32,6 +32,24 @@ class Child < ActiveRecord::Base
         end
     end
 
+    def self.delete_child
+        prompt = TTY::Prompt.new
+        
+        
+        the_name = prompt.ask("What's your childs name")
+        Child.find_by(name: the_name)
+        child_delete = prompt.ask("Are you sure you want to take your child out of daycare?", convert: :bool)
+        if child_delete == true
+            Enrollment.last.delete
+            puts "We're sad to see you go, come back anytime"
+            exit
+        elsif child_delete == false
+            puts "Ok, We're happy your still part of out community"
+        exit
+        end
+
+    end
+
 
     def self.update_info
         prompt = TTY::Prompt.new
