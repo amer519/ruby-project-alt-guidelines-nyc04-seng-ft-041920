@@ -32,7 +32,7 @@ class Child < ActiveRecord::Base
         end
     end
 
-    def self.delete_child
+    def self.delete_enrollment
         prompt = TTY::Prompt.new
         
         

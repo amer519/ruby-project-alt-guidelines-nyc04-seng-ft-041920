@@ -18,7 +18,7 @@ class Interface
 
             menu.choice "No, My child's Enrolled", -> { Child.who_is_child }
 
-            menu.choice "Take my child out of Daycare", -> { Child.delete_child}
+            menu.choice "Take my child out of Daycare", -> { Child.delete_enrollment}
         end
         @user = something
     end
