@@ -21,12 +21,14 @@ class Child < ActiveRecord::Base
         child_names = prompt.ask("Welcome Back! Who's your child?")
         found_child = Child.find_by(name: child_names)
         if found_child 
-            return found_child
+            puts "Welcome #{child_names}'s parents!!'"
+            exit
+            
         else
             puts "Sorry, your child is not currently enrolled!"
-            prompt.ask("Would you like to enroll?")
+            
 
-
+          abort
         end
     end
 

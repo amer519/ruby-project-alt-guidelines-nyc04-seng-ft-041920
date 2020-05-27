@@ -1,5 +1,6 @@
 Child.destroy_all
 Daycare.destroy_all
+Enrollment.destroy_all
 
 daycares = ["Dunder Daycare", "Dwight's Daycare", "Scott's Totts"]
 
@@ -21,8 +22,7 @@ end
         name: Faker::Name.name,
         age: rand(1..4),
         allergy: Faker::Boolean,
-        enrolled: daycares.sample
-    )
+         )
 end
 
 

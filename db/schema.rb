@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_205305) do
+ActiveRecord::Schema.define(version: 2020_05_27_174853) do
 
   create_table "children", force: :cascade do |t|
     t.string "name"
@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_205305) do
   create_table "enrollments", force: :cascade do |t|
     t.integer "child_id"
     t.integer "daycare_id"
-    t.boolean "enrolled"
   end
 
 end
