@@ -7,8 +7,10 @@ interface = Interface.new()
 interface.welcome 
 
 interface.enrolling_or_not
+
 interface.choose_daycare
 
+interface.update_child
 
 
 

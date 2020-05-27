@@ -31,6 +31,15 @@ class Interface
         
          Enrollment.create(child_id: @user.id, daycare_id: first.id)
     end  
+
+
+    def update_child
+        prompt.select("Would you like to update your childs info?") do |menu|
+            menu.choice "Yes Please", -> { Child.update_info }
+            
+            menu.choice "No, Thank you", -> { puts "OK, your all set than" }
+        end
+    end
     
     
     

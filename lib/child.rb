@@ -33,5 +33,20 @@ class Child < ActiveRecord::Base
     end
 
 
+    def self.update_info
+        prompt = TTY::Prompt.new
+        
+        Child.last.name
+        child_update = prompt.ask("Sure let's grab that updated info right away!!")
+
+        child_name = prompt.ask("So what is your child's updated name")
+        child_age = prompt.ask("Perfect now just update there current age!", convert: :int)
+        child_allergy = prompt.ask("How about the allergies?", convert: :bool)
+
+        Child.last.update(name: child_name, age: child_age, allergy: child_allergy)
+        
+    end
+
+
 
 end
