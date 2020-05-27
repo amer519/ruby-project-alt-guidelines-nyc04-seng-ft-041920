@@ -7,12 +7,31 @@ class Interface
     end
 
     def welcome
-        puts "Hello, Welcome to Scott's Totts!"
+        system("clear")
+        puts "        ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗    ████████╗ ██████╗ 
+        ██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝    ╚══██╔══╝██╔═══██╗
+        ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗         ██║   ██║   ██║
+        ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝         ██║   ██║   ██║
+        ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗       ██║   ╚██████╔╝
+         ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝       ╚═╝    ╚═════╝ 
+                                                                                            "
+        puts "              ███████╗ ██████╗ ██████╗ ████████╗████████╗███████╗    ████████╗ ██████╗ ████████╗████████╗███████╗
+              ██╔════╝██╔════╝██╔═══██╗╚══██╔══╝╚══██╔══╝██╔════╝    ╚══██╔══╝██╔═══██╗╚══██╔══╝╚══██╔══╝██╔════╝
+              ███████╗██║     ██║   ██║   ██║      ██║   ███████╗       ██║   ██║   ██║   ██║      ██║   ███████╗
+              ╚════██║██║     ██║   ██║   ██║      ██║   ╚════██║       ██║   ██║   ██║   ██║      ██║   ╚════██║
+              ███████║╚██████╗╚██████╔╝   ██║      ██║   ███████║       ██║   ╚██████╔╝   ██║      ██║   ███████║
+              ╚══════╝ ╚═════╝ ╚═════╝    ╚═╝      ╚═╝   ╚══════╝       ╚═╝    ╚═════╝    ╚═╝      ╚═╝   ╚══════╝
+                                                                                                           ".colorize(:cyan)
+        sleep(4)
+
+        
     end
+
 
     
 
     def enrolling_or_not
+        
         something = prompt.select("Would you like to Enroll Your Child to a Daycare?") do |menu|
             menu.choice "Yes, I'd Love To!!", -> { Child.create_new_child } 
 
@@ -21,9 +40,11 @@ class Interface
             menu.choice "Take my child out of Daycare", -> { Child.delete_enrollment}
         end
         @user = something
+        
     end
 
     def choose_daycare
+        system("clear")
             puts "We're excited for you child to be part of our community!!"
             daycare_names = Daycare.all.map do |daycare_instance|
                 daycare_instance.name
@@ -43,9 +64,9 @@ class Interface
         end
     end
 
-     
-    
-    
+    #  def logo
+    #     puts 
+    #  end
     
     
 

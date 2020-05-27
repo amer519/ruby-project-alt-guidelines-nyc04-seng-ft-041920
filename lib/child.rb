@@ -5,10 +5,14 @@ class Child < ActiveRecord::Base
 
 
     def self.create_new_child
+        system("clear")
         prompt = TTY::Prompt.new
         child_name = prompt.ask("Great! Whats your child's name?")
+        sleep(2)
         child_age = prompt.ask("How old is #{child_name} ?", convert: :int)
+        sleep(2)
         child_allergy = prompt.ask("Does #{child_name} have any allergies?", convert: :bool)
+        sleep(2)
 
         new_child = Child.create(name: child_name, age: child_age, allergy: child_allergy)
         

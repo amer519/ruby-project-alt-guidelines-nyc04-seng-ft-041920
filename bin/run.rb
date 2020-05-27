@@ -6,6 +6,8 @@ interface = Interface.new()
 
 interface.welcome 
 
+# interface.logo
+
 interface.enrolling_or_not
 
 interface.choose_daycare
