@@ -30,9 +30,9 @@ class Child < ActiveRecord::Base
             another_update = prompt.ask("Would you like to update #{child_names}'s info?".colorize(:cyan), convert: :bool)
             if another_update == true
                 self.update_info
-                puts "******************************".colorize(:cyan)
-                puts "#{child_names} has been updated!!!"
-                puts "******************************".colorize(:cyan)
+                # puts "******************************".colorize(:cyan)
+                # puts "#{child_names} has been updated!!!"
+                # puts "******************************".colorize(:cyan)
             else another_update == false
                 puts "***********************".colorize(:cyan)
                 puts "Ok, have a great day!!"
@@ -92,14 +92,14 @@ class Child < ActiveRecord::Base
         child_allergy = prompt.ask("How about the allergies?".colorize(:cyan), convert: :bool)
 
         Child.last.update(name: child_name, age: child_age, allergy: child_allergy)
-                puts "******************************".colorize(:cyan)
+                puts "**************************************".colorize(:cyan)
                 puts "Your child's info has been updated!!!"
-                puts "******************************".colorize(:cyan)
+                puts "**************************************".colorize(:cyan)
         
         
     end
 
-    # def return_to_menu
+    
         
 
 
