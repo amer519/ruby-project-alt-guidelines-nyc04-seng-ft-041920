@@ -41,6 +41,7 @@ class Interface
             menu.choice "Take my child out of Daycare".colorize(:cyan), -> { Child.delete_enrollment}
 
             menu.choice "Exit".colorize(:magenta), -> { exit }
+            
         end
         
         @user = something
