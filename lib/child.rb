@@ -30,6 +30,7 @@ class Child < ActiveRecord::Base
             another_update = prompt.ask("Would you like to update #{child_names}'s info?".colorize(:cyan), convert: :bool)
             if another_update == true
                 self.update_info
+
                 # puts "******************************".colorize(:cyan)
                 # puts "#{child_names} has been updated!!!"
                 # puts "******************************".colorize(:cyan)
@@ -51,6 +52,7 @@ class Child < ActiveRecord::Base
             yes_or_no = prompt.ask("Would you like to enroll your child now?".colorize(:cyan), convert: :bool)
             if yes_or_no == true
                 self.create_new_child
+                Enrollment.create
             else yes_or_no == false
                 puts "Ok have a Dunder day".colorize(:cyan)
             end
@@ -101,6 +103,22 @@ class Child < ActiveRecord::Base
           #end
 
     end
+
+    # def choose_a_daycare
+    #     system("clear")
+    #         puts "**********************************************************".colorize(:cyan)
+    #         puts "We're excited for your child to be part of our community!!"
+    #         puts "**********************************************************".colorize(:cyan)
+    #         daycare_names = Daycare.all.map do |daycare_instance|
+    #             daycare_instance.name
+                
+    #     end
+        
+    #    list_of_daycare = prompt.select("Great!!! Which Daycare you would like to enroll your child in".colorize(:cyan), daycare_names)
+    #     first = Daycare.find_by(name: list_of_daycare)
+        
+    #      Enrollment.create(child_id: Child.id, daycare_id: first.id)
+    # end  
 
 
     

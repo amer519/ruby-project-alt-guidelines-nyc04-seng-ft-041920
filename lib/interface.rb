@@ -53,7 +53,8 @@ class Interface
      
         
     def choose_daycare
-        system("clear")
+        
+            system("clear")
             puts "**********************************************************".colorize(:cyan)
             puts "We're excited for your child to be part of our community!!"
             puts "**********************************************************".colorize(:cyan)
