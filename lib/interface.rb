@@ -71,7 +71,7 @@ class Interface
 
 
     def update_child
-        prompt.select("Great!! Your child is now enrolled! Would you like to update your childs info?".colorize(:cyan)) do |menu|
+        prompt.select("Perfect!! Your child is now enrolled! Would you like to update your childs info?".colorize(:cyan)) do |menu|
             
            one = menu.choice "Yes Please", -> { Child.update_info }
             

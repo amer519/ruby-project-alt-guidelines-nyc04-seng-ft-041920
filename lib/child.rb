@@ -72,7 +72,9 @@ class Child < ActiveRecord::Base
         child_delete = prompt.ask("Are you sure you want to take your child out of daycare?".colorize(:cyan), convert: :bool)
         if child_delete == true
             Enrollment.last.delete
-            puts "We're sad to see you go, come back anytime".colorize(:cyan)
+            puts "******************************************"
+            puts "We're sad to see you go, come back anytime!!!".colorize(:cyan)
+            puts "******************************************"
             exit
         elsif child_delete == false
             puts "Ok, We're happy your still part of out community!!!".colorize(:cyan)
@@ -95,32 +97,14 @@ class Child < ActiveRecord::Base
 
         Child.last.update(name: child_name, age: child_age, allergy: child_allergy)
                 puts "**************************************".colorize(:cyan)
-                return_it = puts "Your child's info has been updated!!!"
+                puts "Your child's info has been updated!!!"
                 puts "**************************************".colorize(:cyan)
         sleep(4)
-        #   if return_it == "Your child's info has been updated!!!"
-        #     run enrolling_or_not
-          #end
+        
 
     end
 
-    # def choose_a_daycare
-    #     system("clear")
-    #         puts "**********************************************************".colorize(:cyan)
-    #         puts "We're excited for your child to be part of our community!!"
-    #         puts "**********************************************************".colorize(:cyan)
-    #         daycare_names = Daycare.all.map do |daycare_instance|
-    #             daycare_instance.name
-                
-    #     end
-        
-    #    list_of_daycare = prompt.select("Great!!! Which Daycare you would like to enroll your child in".colorize(:cyan), daycare_names)
-    #     first = Daycare.find_by(name: list_of_daycare)
-        
-    #      Enrollment.create(child_id: Child.id, daycare_id: first.id)
-    # end  
-
-
+    
     
         
 
