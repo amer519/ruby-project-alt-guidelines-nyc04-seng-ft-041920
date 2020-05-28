@@ -7,11 +7,11 @@ class Child < ActiveRecord::Base
     def self.create_new_child
         system("clear")
         prompt = TTY::Prompt.new
-        child_name = prompt.ask("Great! Whats your child's name?")
+        child_name = prompt.ask("Great! Whats your child's name?".colorize(:color => :white, :background => :cyan))
         sleep(2)
-        child_age = prompt.ask("How old is #{child_name} ?", convert: :int)
+        child_age = prompt.ask("How old is #{child_name} ?".colorize(:color => :white, :background => :cyan), convert: :int)
         sleep(2)
-        child_allergy = prompt.ask("Does #{child_name} have any allergies?", convert: :bool)
+        child_allergy = prompt.ask("Does #{child_name} have any allergies?".colorize(:color => :white, :background => :cyan), convert: :bool)
         sleep(2)
 
         new_child = Child.create(name: child_name, age: child_age, allergy: child_allergy)
@@ -26,14 +26,22 @@ class Child < ActiveRecord::Base
         found_child = Child.find_by(name: child_names)
         if found_child 
             puts "Welcome #{child_names}'s parents!!'"
+            
             exit
             
         else
             puts "Sorry, your child is not currently enrolled!"
+            prompt =TTY::Prompt.new
+            yes_or_no = prompt.ask("Would you like to enroll your child now?", convert: :bool)
+            if yes_or_no == true
+                self.create_new_child
+            else yes_or_no == false
+                puts "Ok have a Dunder day"
+            end
             
-
-          abort
+          #abort
         end
+        
     end
 
     def self.delete_enrollment
@@ -56,6 +64,7 @@ class Child < ActiveRecord::Base
 
 
     def self.update_info
+        system("clear")
         prompt = TTY::Prompt.new
         
         Child.last.name
@@ -66,6 +75,7 @@ class Child < ActiveRecord::Base
         child_allergy = prompt.ask("How about the allergies?", convert: :bool)
 
         Child.last.update(name: child_name, age: child_age, allergy: child_allergy)
+        
         
     end
 
