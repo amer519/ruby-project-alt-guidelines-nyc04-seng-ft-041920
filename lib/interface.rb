@@ -22,7 +22,7 @@ class Interface
               ███████║╚██████╗╚██████╔╝   ██║      ██║   ███████║       ██║   ╚██████╔╝   ██║      ██║   ███████║
               ╚══════╝ ╚═════╝ ╚═════╝    ╚═╝      ╚═╝   ╚══════╝       ╚═╝    ╚═════╝    ╚═╝      ╚═╝   ╚══════╝
                                                                                                            ".colorize(:cyan)
-        sleep(5)
+        sleep(4)
 
         
     end
@@ -50,11 +50,12 @@ class Interface
         @user = something
         
     end
-
+     
+        
     def choose_daycare
         system("clear")
             puts "**********************************************************".colorize(:cyan)
-            puts "We're excited for you child to be part of our community!!"
+            puts "We're excited for your child to be part of our community!!"
             puts "**********************************************************".colorize(:cyan)
             daycare_names = Daycare.all.map do |daycare_instance|
                 daycare_instance.name
@@ -70,12 +71,17 @@ class Interface
 
     def update_child
         prompt.select("Great!! Your child is now enrolled! Would you like to update your childs info?".colorize(:cyan)) do |menu|
-            menu.choice "Yes Please", -> { Child.update_info }
             
-            menu.choice "No, Thank you", -> { puts "OK, your all set than".colorize(:magenta) }
+           one = menu.choice "Yes Please", -> { Child.update_info }
+            
+           two = menu.choice "No, Thank you", -> { puts "OK, your all set than".colorize(:magenta) }
             sleep(2)
             
+            if two == "OK, your all set than"
+                sleep(2)
+                enrolling_or_not
             
+            end
         end
         enrolling_or_not
     end

@@ -8,11 +8,11 @@ class Child < ActiveRecord::Base
         system("clear")
         prompt = TTY::Prompt.new
         child_name = prompt.ask("Great! Whats your child's name?".colorize(:color => :white, :background => :cyan))
-        sleep(2)
+        sleep(1)
         child_age = prompt.ask("How old is #{child_name} ?".colorize(:color => :white, :background => :cyan), convert: :int)
-        sleep(2)
+        sleep(1)
         child_allergy = prompt.ask("Does #{child_name} have any allergies?".colorize(:color => :white, :background => :cyan), convert: :bool)
-        sleep(2)
+        sleep(1)
 
         new_child = Child.create(name: child_name, age: child_age, allergy: child_allergy)
         
@@ -93,11 +93,15 @@ class Child < ActiveRecord::Base
 
         Child.last.update(name: child_name, age: child_age, allergy: child_allergy)
                 puts "**************************************".colorize(:cyan)
-                puts "Your child's info has been updated!!!"
+                return_it = puts "Your child's info has been updated!!!"
                 puts "**************************************".colorize(:cyan)
-        
-        
+        sleep(4)
+        #   if return_it == "Your child's info has been updated!!!"
+        #     run enrolling_or_not
+          #end
+
     end
+
 
     
         
